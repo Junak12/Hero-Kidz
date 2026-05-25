@@ -25,7 +25,7 @@ export default function RootLayout({ children }) {
         <header className="px-20 py-2">
           <Navbar/>
         </header>
-        <main className="px-20 py-2">{children}</main>
+        <main className="px-20 py-2 min-h-[calc(100vh-318px)]">{children}</main>
         <footer className="px-20 py-2">
           <Footer/>
         </footer>
