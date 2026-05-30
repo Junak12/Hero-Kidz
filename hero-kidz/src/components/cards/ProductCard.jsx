@@ -1,9 +1,12 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import { FaStar } from "react-icons/fa";
+import AddToCartButton from "../buttons/AddToCartButton";
 
 const ProductCard = ({ product }) => {
   const {
+    _id,
     title,
     bangla,
     image,
@@ -92,13 +95,12 @@ const ProductCard = ({ product }) => {
 
         {/* BUTTONS */}
         <div className="flex gap-2 pt-1">
-          <button className="flex-1 text-sm font-medium rounded-lg border border-primary text-primary py-2 hover:bg-primary hover:text-white transition">
-            Add to Cart
-          </button>
-
-          <button className="text-sm px-4 rounded-lg border border-base-300 hover:border-base-content/40 transition">
-            Details
-          </button>
+          <AddToCartButton product={product}/>
+          <Link href={`/products/${_id}`}>
+            <button className="text-sm px-4 py-3 border-orange-400 rounded-lg border cursor-pointer hover:border-base-content/40 transition">
+              Details
+            </button>
+          </Link>
         </div>
       </div>
     </div>
